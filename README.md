@@ -1,4 +1,4 @@
-<h1>Custom React Template For Easy Prototyping</h1>
+<h1>YONI task manager</h1>
 <ul>
   <li>React</li>
   <li>Hooks</li>
@@ -12,4 +12,3 @@
   <li>Jquery and Bootstrap.js CDN</li>
 </ul>
 
-<p>just because I'm zaebalsya of doing it every time</p>

@@ -7,11 +7,10 @@ import { Provider } from 'react-redux';
 
 import './index.scss';
 import App from './components/App/App.jsx';
-import { counterSlice, usersSlice, listItems } from './store/slices';
+import { counterSlice, listItems } from './store/slices';
 
 const reducer = {
     counter: counterSlice.reducer,
-    users: usersSlice.reducer,
     items: listItems.reducer,
   // ...more reducers
 };
@@ -19,10 +18,10 @@ const reducer = {
 const store = configureStore({reducer});
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <App />
-    </Router>
-  </Provider>,
-  document.getElementById(`root`)
+    <Provider store={store}>
+        <Router history={history}>
+            <App />
+        </Router>
+    </Provider>,
+    document.getElementById(`root`)
 );

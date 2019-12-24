@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import {listItems} from "../../store/slices";
 
-import Navbar from '../Navbar/Navbar.jsx';
+import Navbar from '../../components/Navbar/Navbar.jsx';
 
 const SecondPage = () => {
     const [isVisible, setVisible] = useState(false);
