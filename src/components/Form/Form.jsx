@@ -10,7 +10,7 @@ const Form = () => {
     const [color, setColor] = useState('');
     const [size, setSize] = useState(SIZES[3]);
     const [instagram, setInstagram] = useState('@');
-    const [city, setCity] = useState('');
+    const [phone, setPhone] = useState('8');
     const [address, setAddress] = useState('');
     const [description, setDescription] = useState('');
     const [paid, setPaid] = useState(false);
@@ -25,7 +25,7 @@ const Form = () => {
     };
 
     const submitHandler = () => {
-        if (!article || !color || !size || !city || !address) {
+        if (!article || !color || !size || !address) {
             setShowError(true)
             setTimeout(() => {
                 setShowError(false)
@@ -36,7 +36,7 @@ const Form = () => {
                 color,
                 size,
                 instagram,
-                city,
+                phone,
                 address,
                 description,
                 paid
@@ -46,7 +46,7 @@ const Form = () => {
             setColor('')
             setSize(SIZES[3])
             setInstagram('@')
-            setCity('')
+            setPhone('8')
             setAddress('')
             setDescription('')
             setPaid(false)
@@ -118,49 +118,47 @@ const Form = () => {
                 </div>
             </div>
 
-            <div className="form-row">
-                <div className="form-group col-md-6">
-                    <label htmlFor="city-input">City <span className="text-danger">*</span></label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="city-input"
-                        placeholder="City"
-                        value={city}
-                        onChange={(e) => {
-                            setCity(e.target.value)
-                        }}/>
-                </div>
-
-                <div className="form-group col-md-6">
-                    <label htmlFor="address-input">Address <span className="text-danger">*</span></label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="address-input"
-                        placeholder="Adress"
-                        value={address}
-                        onChange={(e) => {
-                            setAddress(e.target.value)
-                        }}/>
-                </div>
-            </div>
-
-
-
             <div className="form-group">
-                <label htmlFor="instagram-input">Instagram</label>
+                <label htmlFor="address-input">Address <span className="text-danger">*</span></label>
                 <input
                     type="text"
                     className="form-control"
-                    id="instagram-input"
-                    placeholder="instagram"
-                    value={instagram}
+                    id="address-input"
+                    placeholder="Adress"
+                    value={address}
                     onChange={(e) => {
-                        setInstagram(e.target.value)
-                    }} />
-                <small className="form-text text-muted">Enter instagram address</small>
+                        setAddress(e.target.value)
+                    }}/>
             </div>
+
+            <div className="form-row">
+                <div className="form-group col-md-6">
+                    <label htmlFor="instagram-input">Instagram</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="instagram-input"
+                        placeholder="instagram"
+                        value={instagram}
+                        onChange={(e) => {
+                            setInstagram(e.target.value)
+                        }} />
+                </div>
+
+                <div className="form-group col-md-6">
+                    <label htmlFor="phone-input">Phone</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="phone-input"
+                        placeholder="Phone"
+                        value={phone}
+                        onChange={(e) => {
+                            setPhone(e.target.value)
+                        }} />
+                </div>
+            </div>
+
 
             <div className="form-group">
                 <label htmlFor="description-input">Description</label>
@@ -174,6 +172,7 @@ const Form = () => {
                     onChange={(e) => {
                         setDescription(e.target.value)
                     }}/>
+                <small className="form-text text-muted">Details</small>
             </div>
 
             <div className="form-check">
