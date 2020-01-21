@@ -6,9 +6,11 @@ const List = () => {
     const orders = useSelector(state => state.items);
     console.log(orders)
     return (
-        <div className="wrapper-list">
+        <div className="row">
             {orders.map((item, i) =>
-                <Card data={item} key={i}/>
+                <div className="col-lg-4 col-md-6 col-sm-12">
+                    <Card data={item} key={i}/>
+                </div>
             )}
         </div>
     )

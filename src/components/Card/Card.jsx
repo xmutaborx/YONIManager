@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Card = ({ data }) => {
-    console.log(data)
     return (
         <div className="item-card">
             <p>ID: ???</p>

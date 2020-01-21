@@ -7,7 +7,7 @@ const MainPage = () => {
       <main>
           <Navbar />
           <div className="container">
-              <h1>Main page v2</h1>
+              <h3>Заказы</h3>
               <List/>
           </div>
       </main>
