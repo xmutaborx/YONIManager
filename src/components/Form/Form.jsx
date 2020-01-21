@@ -34,6 +34,10 @@ const Form = () => {
     const submitHandler = () => {
         if (!article || !color || !size || !address || !name) {
             setShowError(true)
+            window.scrollTo({
+                top: 0,
+                behavior: `smooth`
+            });
             setTimeout(() => {
                 setShowError(false)
             }, 3000);
