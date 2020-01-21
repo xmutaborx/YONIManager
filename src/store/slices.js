@@ -15,7 +15,16 @@ export const counterSlice = createSlice({
 
 export const listItems = createSlice({
   name: 'items',
-  initialState: [],
+  initialState: [{
+    article: "Hoodies",
+    color: "red",
+    size: "M",
+    instagram: "@tratata",
+    phone: "8123456789",
+    address: "address",
+    description: "description",
+    paid: true
+  }],
   reducers: {
     addItem: (state, action) => {
       state.push(action.payload)

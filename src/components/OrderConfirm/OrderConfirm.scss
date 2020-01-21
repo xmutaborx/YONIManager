@@ -1,0 +1,22 @@
+.order-confirm {
+  background: #fff;
+
+  &__title {
+    text-transform: capitalize;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+  }
+
+  &__text {
+    letter-spacing: 1px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  &__btn-wrap {
+    width: 250px;
+    display: flex;
+    margin: 20px auto 0;
+  }
+}
