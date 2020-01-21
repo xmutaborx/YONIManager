@@ -22,9 +22,10 @@ export const listItems = createSlice({
     name: 'Random Name',
     instagram: "@tratata",
     phone: "8123456789",
-    address: "address",
-    description: "description",
-    paid: true
+    address: "Country City Street 123, 23 test test test",
+    description: "test description test description test description test description test description test description",
+    paid: true,
+    date: '21.01.20'
   }],
   reducers: {
     addItem: (state, action) => {

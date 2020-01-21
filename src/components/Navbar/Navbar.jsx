@@ -19,9 +19,6 @@ const Navbar = ({ activePage }) => {
                     <li className={`nav-item ${activePage === PAGES_NAME.order ? 'active' : ''}`}>
                         <Link className="nav-link" to="/order">Добавить заказ</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/second-page">Second Page</Link>
-                    </li>
                 </ul>
             </div>
         </nav>

@@ -4,6 +4,7 @@ import { listItems } from "../../store/slices";
 import { ARTICLES, SIZES } from "../../constants/constants";
 import { CSSTransition } from 'react-transition-group';
 import history from "../../history";
+import { dateRender } from '../../helpers/scripts'
 
 import OrderConfirm from '../OrderConfirm/OrderConfirm';
 
@@ -42,6 +43,8 @@ const Form = () => {
     };
 
     const handleConfirm = () => {
+        let date = new Date()
+        date = dateRender(date)
         const item = {
             article,
             color,
@@ -51,7 +54,8 @@ const Form = () => {
             phone,
             address,
             description,
-            paid
+            paid,
+            date
         };
         dispatch(listItems.actions.addItem(item));
         history.push('/')
@@ -145,11 +149,11 @@ const Form = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="address-input">Имя <span className="text-danger">*</span></label>
+                        <label htmlFor="name-input">Имя <span className="text-danger">*</span></label>
                         <input
                             type="text"
                             className="form-control"
-                            id="address-input"
+                            id="name-input"
                             value={name}
                             onChange={(e) => {
                                 setName(e.target.value)
