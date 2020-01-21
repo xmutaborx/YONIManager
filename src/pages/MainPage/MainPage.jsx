@@ -7,7 +7,7 @@ const MainPage = () => {
       <main>
           <Navbar />
           <div className="container">
-              <h1>Main page</h1>
+              <h1>Main page v2</h1>
               <List/>
           </div>
       </main>
