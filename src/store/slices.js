@@ -1,18 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-export const counterSlice = createSlice({
-  name: 'counter',
-  initialState: 0,
-  reducers: {
-    increment: state => {
-      return ++state
-    },
-    decrement: state => {
-      return --state
-    }
-  }
-});
-
 export const listItems = createSlice({
   name: 'items',
   initialState: [{
@@ -32,6 +19,16 @@ export const listItems = createSlice({
   reducers: {
     addItem: (state, action) => {
       state.push(action.payload)
+    }
+  }
+});
+
+export const sortOptions = createSlice({
+  name: 'Sort',
+  initialState: 'ALL',
+  reducers: {
+    changeSort: (state, action) => {
+      return action.payload
     }
   }
 });

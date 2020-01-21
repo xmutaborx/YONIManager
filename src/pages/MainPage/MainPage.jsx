@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar.jsx';
-import List from '../../components/List/List'
-import { PAGES_NAME } from '../../constants/constants'
+import List from '../../components/List/List';
+import SortPanel from '../../components/SortPanel/SortPanel';
+import { PAGES_NAME } from '../../constants/constants';
 
 const MainPage = () => {
   return (
@@ -9,8 +10,8 @@ const MainPage = () => {
           <Navbar
             activePage={PAGES_NAME.mainPage}
           />
-          <div className="container">
-              <h3>Заказы</h3>
+          <SortPanel/>
+          <div className="container custom-container">
               <List/>
           </div>
       </main>

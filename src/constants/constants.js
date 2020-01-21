@@ -1,5 +1,3 @@
-export const URL = `https://api.myjson.com/bins/ukwwk`;
-
 export const STATUS_CODE = {
     ok: 200
 };
@@ -25,4 +23,12 @@ export const SIZES = [
 export const PAGES_NAME = {
     mainPage: `MAIN_PAGE`,
     order: `ORDER`
-}
+};
+
+export const SORT_OPTIONS = {
+    all: `ALL`,
+    paid: `PAID`,
+    unpaid: `UNPAID`,
+    delivered: `DELIVERED`,
+    undelivered: `UNDELIVERED`
+};

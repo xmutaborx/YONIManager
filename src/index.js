@@ -7,12 +7,11 @@ import { Provider } from 'react-redux';
 
 import './index.scss';
 import App from './components/App/App.jsx';
-import { counterSlice, listItems } from './store/slices';
+import { sortOptions, listItems } from './store/slices';
 
 const reducer = {
-    counter: counterSlice.reducer,
+    sort: sortOptions.reducer,
     items: listItems.reducer,
-  // ...more reducers
 };
 
 const store = configureStore({reducer});

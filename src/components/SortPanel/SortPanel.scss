@@ -1,0 +1,26 @@
+@import "../../helpers/breakpoints";
+
+.panel {
+  width: 100%;
+  background: #f8f9fa;
+  padding: 3px 20px;
+  &__btn-wrap {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .panel {
+    &__btn-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+
+      button {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+}
