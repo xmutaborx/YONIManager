@@ -263,7 +263,7 @@ const Form = () => {
                     <div className="custom-card__btn-wrap">
                         <button
                             type="submit"
-                            className="btn btn-success"
+                            className="btn btn-info"
                             onClick={(e) => {
                                 e.preventDefault();
                                 submitHandler();
