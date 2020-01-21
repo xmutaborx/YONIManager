@@ -41,13 +41,13 @@ const Card = ({ data }) => {
                 <span className="item-card__name">Размер</span>
                 <span className="item-card__text">{data.size}</span>
             </div>
-            {data.instagram !== '@' && (
+            {data.instagram && (
                 <div className="item-card__row">
                     <span className="item-card__name">Instagram</span>
                     <span className="item-card__text">{data.instagram}</span>
                 </div>
             )}
-            {data.phone !== '+7' && (
+            {data.phone && (
                 <div className="item-card__row">
                     <span className="item-card__name">Телефон</span>
                     <span className="item-card__text">{data.phone}</span>
