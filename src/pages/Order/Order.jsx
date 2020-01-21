@@ -10,7 +10,9 @@ const Order = () => {
             <Navbar
                 activePage={PAGES_NAME.order}
             />
-            <Form  />
+            <div className="container">
+                <Form/>
+            </div>
         </main>
     )
 };
