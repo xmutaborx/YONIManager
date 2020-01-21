@@ -21,3 +21,8 @@ export const SIZES = [
     `XXL`,
     `чехол для танка`
 ];
+
+export const PAGES_NAME = {
+    mainPage: `MAIN_PAGE`,
+    order: `ORDER`
+}
