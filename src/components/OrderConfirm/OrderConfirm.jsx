@@ -1,7 +1,7 @@
 import React from 'react'
 import './OrderConfirm.scss'
 
-const OrderConfirm = ({ article, color, size, name, address, instagram, phone, description, paid, onConfirm, onEdit }) => {
+const OrderConfirm = ({ article, color, size, name, address, instagram, phone, description, paid, ship, onConfirm, onEdit }) => {
     return (
         <div className="order-confirm">
             <p className="order-confirm__card-title">Подтверждение заказа</p>
@@ -47,6 +47,10 @@ const OrderConfirm = ({ article, color, size, name, address, instagram, phone, d
                 <div className="order-confirm__row">
                     <span className="order-confirm__title">Статус: </span>
                     <span className="order-confirm__text">{paid ? `Оплачено` : `Ожидает оплаты`}</span>
+                </div>
+                <div className="order-confirm__row">
+                    <span className="order-confirm__title">Отправлено: </span>
+                    <span className="order-confirm__text">{ship ? `Отправлено` : `Ожидает отправки`}</span>
                 </div>
             </div>
             <div className="order-confirm__btn-wrap">

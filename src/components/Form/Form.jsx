@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { listItems } from "../../store/slices";
 import { ARTICLES, SIZES } from "../../constants/constants";
 import { CSSTransition } from 'react-transition-group';
@@ -9,7 +9,9 @@ import { dateRender } from '../../helpers/scripts'
 import OrderConfirm from '../OrderConfirm/OrderConfirm';
 
 const Form = () => {
+    const [orderStatus, setOrderStatus] = useState(false);
     const [showError, setShowError] = useState(false)
+
     const [article, setArticle] = useState(ARTICLES[0]);
     const [color, setColor] = useState('');
     const [size, setSize] = useState(SIZES[3]);
@@ -19,9 +21,19 @@ const Form = () => {
     const [address, setAddress] = useState('');
     const [description, setDescription] = useState('');
     const [paid, setPaid] = useState(false);
-    const [orderStatus, setOrederStatus] = useState(false);
+    const [ship, setShip] = useState(false);
 
     const dispatch = useDispatch();
+    const orders = useSelector(state => state.items);
+
+    const handleChangePaid = (e) => {
+        if (paid) {
+            setPaid(false);
+            setShip(false);
+        } else {
+            setPaid(true);
+        }
+    }
 
     const handleChangeArticle = (e) => {
         setArticle(e.target.value);
@@ -33,22 +45,25 @@ const Form = () => {
 
     const submitHandler = () => {
         if (!article || !color || !size || !address || !name) {
-            setShowError(true)
+            setShowError(true);
             window.scrollTo({
                 top: 0,
                 behavior: `smooth`
             });
             setTimeout(() => {
-                setShowError(false)
+                setShowError(false);
             }, 3000);
         } else {
-            setOrederStatus(true)
+            setOrderStatus(true);
         }
     };
 
     const handleConfirm = () => {
-        let date = new Date()
-        date = dateRender(date)
+        let date = new Date();
+        date = dateRender(date);
+
+        const id = orders[orders.length - 1].id + 1
+
         const item = {
             article,
             color,
@@ -59,14 +74,16 @@ const Form = () => {
             address,
             description,
             paid,
-            date
+            ship,
+            date,
+            id
         };
         dispatch(listItems.actions.addItem(item));
         history.push('/')
     }
 
     const handleEdit = () => {
-        setOrederStatus(false)
+        setOrderStatus(false)
     }
 
     return (
@@ -83,6 +100,7 @@ const Form = () => {
                     phone={phone}
                     description={description}
                     paid={paid}
+                    ship={ship}
                     onConfirm={handleConfirm}
                     onEdit={handleEdit}
                 />
@@ -208,7 +226,6 @@ const Form = () => {
                     <div className="form-group">
                         <label htmlFor="description-input">Описание</label>
                         <textarea
-                            type="text"
                             rows="3"
                             className="form-control"
                             id="description-input"
@@ -226,10 +243,23 @@ const Form = () => {
                             className="form-check-input"
                             id="check-input"
                             checked={paid}
-                            onChange={() => setPaid(!paid)}
+                            onChange={handleChangePaid}
                         />
                         <label className="form-check-label" htmlFor="check-input">Оплачено</label>
                     </div>
+
+                    <div className="form-check">
+                        <input
+                            type="checkbox"
+                            className="form-check-input"
+                            id="check-ship"
+                            disabled={!paid}
+                            checked={ship}
+                            onChange={() => setShip(!ship)}
+                        />
+                        <label className="form-check-label" htmlFor="check-ship">Отправлено</label>
+                    </div>
+
                     <div className="custom-card__btn-wrap">
                         <button
                             type="submit"
