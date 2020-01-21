@@ -4,7 +4,7 @@ import './OrderConfirm.scss'
 const OrderConfirm = ({ article, color, size, address, instagram, phone, description, paid, onConfirm, onEdit }) => {
     return (
         <div className="order-confirm">
-            <h3>Подтверждение заказа:</h3>
+            <h4>Подтверждение заказа:</h4>
             <div className="order-confirm__content">
                 <div className="order-confirm__row">
                     <span className="order-confirm__title">Коллекция: </span>

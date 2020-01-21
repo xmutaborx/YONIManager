@@ -79,7 +79,7 @@ const Form = () => {
 
             {!orderStatus && (
                 <div className="custom-card__content">
-                    <h3 className="mx-auto mb-4">Add Order</h3>
+                    <h4 className="mx-auto mb-4">Добавить заказ:</h4>
                     <CSSTransition
                         in={showError}
                         timeout={300}
