@@ -1,22 +1,49 @@
 .order-confirm {
   background: #fff;
 
+  &__card-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__row {
+    border-bottom: 1px solid #eee;
+    padding: 6px 0 7px;
+  }
+
   &__title {
     text-transform: capitalize;
     font-size: 18px;
     line-height: 22px;
-    font-weight: bold;
+    width: 120px;
+    display: inline-block;
   }
 
   &__text {
-    letter-spacing: 1px;
     font-size: 18px;
     line-height: 22px;
   }
 
   &__btn-wrap {
-    width: 250px;
+    max-width: 250px;
     display: flex;
     margin: 20px auto 0;
+
+    button + button {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .order-confirm {
+    &__btn-wrap {
+      flex-direction: column;
+      max-width: 100%;
+      button + button {
+        margin-left: 0;
+        margin-top: 5px;
+      }
+    }
   }
 }

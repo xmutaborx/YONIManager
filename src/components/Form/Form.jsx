@@ -12,6 +12,7 @@ const Form = () => {
     const [article, setArticle] = useState(ARTICLES[0]);
     const [color, setColor] = useState('');
     const [size, setSize] = useState(SIZES[3]);
+    const [name, setName] = useState('');
     const [instagram, setInstagram] = useState('@');
     const [phone, setPhone] = useState('+7');
     const [address, setAddress] = useState('');
@@ -30,7 +31,7 @@ const Form = () => {
     };
 
     const submitHandler = () => {
-        if (!article || !color || !size || !address) {
+        if (!article || !color || !size || !address || !name) {
             setShowError(true)
             setTimeout(() => {
                 setShowError(false)
@@ -45,6 +46,7 @@ const Form = () => {
             article,
             color,
             size,
+            name,
             instagram,
             phone,
             address,
@@ -67,6 +69,7 @@ const Form = () => {
                     article={article}
                     color={color}
                     size={size}
+                    name={name}
                     address={address}
                     instagram={instagram}
                     phone={phone}
@@ -142,6 +145,18 @@ const Form = () => {
                     </div>
 
                     <div className="form-group">
+                        <label htmlFor="address-input">Имя <span className="text-danger">*</span></label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="address-input"
+                            value={name}
+                            onChange={(e) => {
+                                setName(e.target.value)
+                            }}/>
+                    </div>
+
+                    <div className="form-group">
                         <label htmlFor="address-input">Адрес <span className="text-danger">*</span></label>
                         <input
                             type="text"
@@ -205,12 +220,12 @@ const Form = () => {
                             checked={paid}
                             onChange={() => setPaid(!paid)}
                         />
-                        <label className="form-check-label" htmlFor="check-input">Paid</label>
+                        <label className="form-check-label" htmlFor="check-input">Оплачено</label>
                     </div>
                     <div className="custom-card__btn-wrap">
                         <button
                             type="submit"
-                            className="btn btn-primary"
+                            className="btn btn-success"
                             onClick={(e) => {
                                 e.preventDefault();
                                 submitHandler();

@@ -9,7 +9,12 @@
   border-radius: 8px;
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.1);
   &__btn-wrap {
-    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+
+    button {
+      flex-basis: 250px;
+    }
   }
 }
 

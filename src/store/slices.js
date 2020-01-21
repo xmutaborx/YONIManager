@@ -19,6 +19,7 @@ export const listItems = createSlice({
     article: "Hoodies",
     color: "red",
     size: "M",
+    name: 'Random Name',
     instagram: "@tratata",
     phone: "8123456789",
     address: "address",
