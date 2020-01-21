@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+// GLOBAL
+
+.form-control {
+  background-clip: padding-box;
+}
+
 // ORDER
 
 .custom-card {
@@ -9,6 +15,7 @@
   border-radius: 8px;
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.1);
   &__btn-wrap {
+    margin-top: 15px;
     display: flex;
     justify-content: center;
 
